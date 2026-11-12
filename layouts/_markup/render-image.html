@@ -1,0 +1,10 @@
+{{- /* Images: lazy loading, optional caption from the image title: ![alt](src "Caption") */ -}}
+{{- $src := .Destination | safeURL -}}
+{{- with .Title -}}
+<figure>
+  <img src="{{ $src }}" alt="{{ $.Text }}" loading="lazy" decoding="async">
+  <figcaption>{{ . }}</figcaption>
+</figure>
+{{- else -}}
+<img src="{{ $src }}" alt="{{ .Text }}" loading="lazy" decoding="async">
+{{- end -}}

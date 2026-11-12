@@ -1,0 +1,4 @@
+# Optional static boxes for the side panel (see theme docs). Empty for now.
+side:
+  home: []
+  single: []

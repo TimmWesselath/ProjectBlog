@@ -1,0 +1,11 @@
+# Site-specific strings (theme strings come from themes/rusty-typewriter/i18n/en.yaml)
+contact: "Contact"
+imprint: "Imprint (Impressum)"
+privacy: "Privacy"
+translationTitle: "Deutsche Version"
+formName: "Name"
+formEmail: "Email"
+formMessage: "Message"
+formSend: "Send message"
+formPrivacyNote: "Your message is sent via the form service Static Forms and forwarded to me by email. Details in the"
+formPrivacyLink: "privacy policy"

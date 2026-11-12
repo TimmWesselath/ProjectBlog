@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "searchindex" slice -}}
+{{- range $index, $element := where (where site.RegularPages "Params.indexable" "ne" false) "Section" "posts" -}}
+    {{- $.Scratch.Add "searchindex" (dict "id" $index "title" $element.Title "permalink" $element.RelPermalink "tags" (delimit ($element.Params.tags | default "") " ") "content" $element.Plain "summary" (partial "components/summary.html" $element) "date" ($element.Date | time.Format ":date_long")) -}}
+{{- end -}}
+{{- $.Scratch.Get "searchindex" | jsonify -}}

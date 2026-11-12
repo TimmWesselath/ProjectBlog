@@ -1,0 +1,118 @@
+# ------------------------------------------------------------
+#  Blog configuration
+#  Replace everything marked with "PLACEHOLDER".
+# ------------------------------------------------------------
+
+# PLACEHOLDER: your domain, with https:// and a trailing slash
+baseURL = "https://wesselath.de/"
+
+theme = "rusty-typewriter"
+
+# English is the main language (served at the root: example.com/)
+# German lives under example.com/de/
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# No tags/categories for now; posts are sorted by date
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[params]
+  # Contact form (Static Forms). Fill in after creating your account.
+  # Check the form endpoint shown in your Static Forms dashboard (EU region).
+   contactFormAction = "https://api.staticforms.dev/submit"
+   contactFormAccessKey = "sf_f58079993d9ff32b59f1ebe9"
+
+  [params.author]
+    name = "Timm Wesselath"
+
+  [params.links]
+    theme = "https://github.com/math-queiroz/rusty-typewriter"
+    hugo = "https://gohugo.io"
+
+  # ---- Rusty Typewriter theme settings ----
+  [params.rtwt]
+    sidePane = true
+    countPageItems = 10
+    searchPath = "search"
+
+  [params.rtwt.home]
+    showBio = true
+    showAuthorImg = false     # set to true and add static/images/profile.jpg to show a photo
+    showFeatured = true       # set "featured: true" on a post to pin it on the home page
+    showRecent = true
+    hideRecentWhenFeatured = true
+    countRecent = 5
+
+  [params.rtwt.side.home]
+    sidePaneSticky = false
+    taxonomies = []           # no tags for now
+
+  [params.rtwt.side.single]
+    sidePaneSticky = true
+    showDetails = true
+    showTableOfContents = true
+    showAttachments = false
+    showRelated = true
+    countRelated = 5
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    label = "English"
+    locale = "en"
+    weight = 1
+    title = "Timm Wessleath"
+    [languages.en.params]
+      description = "A blog for all my projects"
+    [[languages.en.menus.main]]
+      name = "Posts"
+      pageRef = "/posts"
+      weight = 1
+    [[languages.en.menus.main]]
+      name = "About"
+      pageRef = "/about"
+      weight = 2
+    [[languages.en.menus.main]]
+      name = "Contact"
+      pageRef = "/contact"
+      weight = 3
+
+  [languages.de]
+    contentDir = "content/de"
+    label = "Deutsch"
+    locale = "de"
+    weight = 2
+    title = "Timm Wesselath"
+    [languages.de.params]
+      description = "Ein blog für alle meine Projekte"
+    [[languages.de.menus.main]]
+      name = "Beiträge"
+      pageRef = "/posts"
+      weight = 1
+    [[languages.de.menus.main]]
+      name = "Über"
+      pageRef = "/about"
+      weight = 2
+    [[languages.de.menus.main]]
+      name = "Kontakt"
+      pageRef = "/contact"
+      weight = 3
+
+# Search index (used by the theme's built-in search; stays on your site)
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "searchindex"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3

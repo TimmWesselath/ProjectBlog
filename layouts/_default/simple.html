@@ -1,0 +1,10 @@
+{{- /* Plain page without date or side panel: About, Impressum, Privacy, Thanks */ -}}
+{{- define "main" -}}
+  <div class="single-header">
+    <h1>{{- .Title -}}</h1>
+  </div>
+  <section class="page-section">
+    {{- .Content -}}
+  </section>
+{{- end -}}
+{{- define "side" -}}{{- end -}}

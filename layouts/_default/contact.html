@@ -1,0 +1,37 @@
+{{- define "main" -}}
+  <div class="single-header">
+    <h1>{{- .Title -}}</h1>
+  </div>
+  <section class="page-section">
+    {{- .Content -}}
+
+    {{- $privacy := site.GetPage "/privacy" }}
+    {{- $thanks := site.GetPage "/contact-thanks" }}
+    <form class="contact-form" action="{{ site.Params.contactFormAction }}" method="post">
+      <input type="hidden" name="apiKey" value="{{ site.Params.contactFormAccessKey }}">
+      {{- /* Reply-to = the email address the visitor enters */}}
+      <input type="hidden" name="replyTo" value="@">
+      {{ with $thanks }}<input type="hidden" name="redirectTo" value="{{ .Permalink }}">{{ end }}
+      <input type="hidden" name="subject" value="{{ site.Title }}: {{ i18n "contact" }}">
+
+      <label for="cf-name">{{ i18n "formName" }}</label>
+      <input id="cf-name" type="text" name="name" autocomplete="name" required>
+
+      <label for="cf-email">{{ i18n "formEmail" }}</label>
+      <input id="cf-email" type="email" name="email" autocomplete="email" required>
+
+      <label for="cf-message">{{ i18n "formMessage" }}</label>
+      <textarea id="cf-message" name="message" rows="7" required></textarea>
+
+      {{- /* Spam trap: Static Forms drops any submission where a field named "honeypot" is filled in */}}
+      <div class="hp" aria-hidden="true">
+        <label for="cf-hp">Leave empty</label>
+        <input id="cf-hp" type="text" name="honeypot" tabindex="-1" autocomplete="off">
+      </div>
+
+      <p class="form-note dim">{{ i18n "formPrivacyNote" }} {{ with $privacy }}<a href="{{ .RelPermalink }}">{{ i18n "formPrivacyLink" }}</a>{{ end }}.</p>
+      <button type="submit">{{ i18n "formSend" }}</button>
+    </form>
+  </section>
+{{- end -}}
+{{- define "side" -}}{{- end -}}

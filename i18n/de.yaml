@@ -1,0 +1,47 @@
+# Root
+theme_light: Helles Design
+theme_dark: Dunkles Design
+
+# Not found (404)
+not_found_title: Hoppla, Seite nicht gefunden!
+not_found_desc: Nicht alle, die umherwandern, sind verloren – aber hier gibt es nichts mehr zu entdecken.
+not_found_home_link: Zur Startseite
+
+# Footer
+scroll_top: Nach oben
+footer: Mit ❤️ erstellt, basierend auf dem Theme {{ .ThemeAnchor }} für {{ .HugoAnchor }}
+
+# Home
+featured_posts: Hervorgehobene Beiträge
+recent_posts: Neueste Beiträge
+
+# Search
+search: Suche
+js_required: Für die Suche muss JavaScript aktiviert sein.
+search_loading: Lädt …
+search_placeholder: Suchen …
+
+# SidePane for home
+see_all: Alle anzeigen …
+
+# Page
+breadcrumb_home: Start
+
+# SidePane for single pages
+details_words: Wörter
+details_read_time: Minuten Lesezeit
+side_table_of_contents: Inhalt
+side_attachments: Anhänge
+side_related: Weitere Beiträge
+
+# Site-specific strings
+contact: "Kontakt"
+imprint: "Impressum"
+privacy: "Datenschutz"
+translationTitle: "English version"
+formName: "Name"
+formEmail: "E-Mail"
+formMessage: "Nachricht"
+formSend: "Nachricht senden"
+formPrivacyNote: "Deine Nachricht wird über den Formulardienst Static Forms übermittelt und mir per E-Mail weitergeleitet. Details in der"
+formPrivacyLink: "Datenschutzerklärung"

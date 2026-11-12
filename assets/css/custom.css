@@ -1,0 +1,49 @@
+/* Additions to the Rusty Typewriter theme */
+
+/* Language switch in the header */
+.lang-switch {
+  border: 1px solid var(--dim-color);
+  border-radius: 4px;
+  padding: 0 0.35rem;
+  font-size: 0.85em;
+}
+
+/* Footer: Impressum / privacy links */
+.footer-legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; justify-content: center; margin: 0.6rem 0; }
+
+/* Wide tables scroll sideways on phones */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+.table-wrap table { margin: 0; }
+
+/* Images with captions */
+figure { margin: 1.5rem 0; }
+figure img, .page-section img { max-width: 100%; height: auto; }
+figcaption { text-align: center; font-size: 0.9em; opacity: var(--dim-opacity); margin-top: 0.4rem; }
+
+/* Contact form */
+.contact-form { display: grid; gap: 0.4rem; margin-top: 2rem; }
+.contact-form label { font-weight: 600; margin-top: 0.6rem; }
+.contact-form input, .contact-form textarea {
+  font: inherit;
+  color: var(--body-text-color);
+  background: transparent;
+  border: 1px solid var(--dim-color);
+  border-radius: 4px;
+  padding: 0.6rem 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--primary-color); outline-offset: 1px; }
+.contact-form button {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+.form-note { font-size: 0.9em; margin: 0.8rem 0 0.4rem; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

@@ -1,0 +1,37 @@
+{{- /* Theme header + language switch (DE/EN) */ -}}
+{{- $current := . -}}
+{{- $switch := "" -}}
+{{- range site.Home.AllTranslations -}}
+  {{- if ne .Language.Lang site.Language.Lang -}}
+    {{- $lang := .Language.Lang -}}
+    {{- $target := .RelPermalink -}}
+    {{- range $current.Translations -}}
+      {{- if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end -}}
+    {{- end -}}
+    {{- $switch = printf `<div class="nav-item"><a class="lang-switch" href="%s" hreflang="%s" lang="%s" title="%s">%s</a></div>` $target .Language.Locale .Language.Locale (i18n "translationTitle") (upper $lang) -}}
+  {{- end -}}
+{{- end -}}
+<div role="navigation" aria-label="Main">
+  <div class="nav-left">
+    <a href="{{- site.Home.RelPermalink -}}" style="color: inherit;">{{- site.Title -}}</a>
+  </div>
+  <div class="nav-right">
+    <div style="position:absolute;width:0px;height:0px;">
+      <div id="nav-dropdown-menu" class="hidden" href="#">
+        {{- partial "menu.html" (dict "menuID" "main" "page" .) -}}
+        {{- $switch | safeHTML -}}
+      </div>
+    </div>
+    <a id="nav-dropdown-button" href="#">
+      {{- partial "svg/menu.svg" -}}
+    </a>
+    <div id="nav-menu">
+      {{- partial "menu.html" (dict "menuID" "main" "page" .) -}}
+      {{- $switch | safeHTML -}}
+    </div>
+    <a id="theme-switcher" href="#">
+      {{- partial "svg/sun.svg" -}}
+      {{- partial "svg/moon.svg" -}}
+    </a>
+  </div>
+</div>

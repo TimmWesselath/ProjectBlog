@@ -1,0 +1,16 @@
+<div class="footer">
+  <a href="#">{{ i18n "scroll_top" }}</a>
+  <div class="footer-legal">
+    {{- with site.GetPage "/impressum" }}<a href="{{ .RelPermalink }}">{{ i18n "imprint" }}</a>{{ end }}
+    {{- with site.GetPage "/privacy" }}<a href="{{ .RelPermalink }}">{{ i18n "privacy" }}</a>{{ end }}
+    {{- with site.Home.OutputFormats.Get "rss" }}<a href="{{ .RelPermalink }}">RSS</a>{{ end }}
+  </div>
+  <div class="footer-copyright">
+    <div class="dim">© {{ now.Year }} {{ site.Params.author.name }}</div>
+    <div>
+      {{- $ThemeAnchor := site.Params.links.theme | printf "<a href=\"%s\" target=\"_blank\" rel=\"noopener\">Rusty Typewriter</a>" -}}
+      {{- $HugoAnchor := site.Params.links.hugo | printf "<a href=\"%s\" target=\"_blank\" rel=\"noopener\">Hugo</a>" -}}
+      {{- i18n "footer" (dict "ThemeAnchor" $ThemeAnchor "HugoAnchor" $HugoAnchor) | safeHTML -}}
+    </div>
+  </div>
+</div>

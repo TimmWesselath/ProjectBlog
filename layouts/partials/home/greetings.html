@@ -1,0 +1,10 @@
+{{- /* Home intro: blog title + description from hugo.toml (per language) */ -}}
+{{- if site.Params.rtwt.home.showBio -}}
+  <div class="centered-container">
+    {{- if site.Params.rtwt.home.showAuthorImg -}}
+      <img style="border: var(--dim-color) 1px solid;border-radius:100%;" width="70" alt="" src="{{- "images/profile.jpg" | relURL -}}"/>
+    {{- end -}}
+    <h1 class="margin-sm">{{- site.Title -}}</h1>
+    <div class="dim" style="width:70%;margin:0 15%;">{{- site.Params.description -}}</div>
+  </div>
+{{- end -}}
