@@ -62,7 +62,7 @@ enableRobotsTXT = true
     label = "English"
     locale = "en"
     weight = 1
-    title = "Timm Wessleath"
+    title = "Timm Wesselath"
     [languages.en.params]
       description = "A blog for all my projects"
     [[languages.en.menus.main]]
