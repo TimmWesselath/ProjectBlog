@@ -47,3 +47,7 @@ figcaption { text-align: center; font-size: 0.9em; opacity: var(--dim-opacity); 
 }
 .form-note { font-size: 0.9em; margin: 0.8rem 0 0.4rem; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+   /* Videos in posts */
+   figure.video video { display: block; width: 100%; height: auto; border-radius: 4px; background: #000; }
+   figure.video-loop video { background: transparent; cursor: pointer; }

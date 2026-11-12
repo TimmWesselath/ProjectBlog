@@ -1,10 +1,37 @@
-{{- /* Images: lazy loading, optional caption from the image title: ![alt](src "Caption") */ -}}
-{{- $src := .Destination | safeURL -}}
-{{- with .Title -}}
+{{- /*
+  Images and videos in posts.
+
+  Images:  ![Description](/images/photo.jpg "Optional caption")
+  Videos:  ![Description](/images/clip.mp4 "Optional caption")      -> video player with controls
+           ![Description](/images/clip.mp4#loop "Optional caption") -> plays like a GIF (muted, looping)
+           A file named *.loop.mp4 / *.loop.webm also plays like a GIF.
+*/ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $ext := lower (path.Ext $u.Path) -}}
+{{- $isVideo := in (slice ".mp4" ".webm") $ext -}}
+{{- if $isVideo -}}
+  {{- $loop := or (eq $u.Fragment "loop") (strings.HasSuffix (lower $u.Path) (printf ".loop%s" $ext)) -}}
+  {{- $src := $u.Path | safeURL -}}
+  {{- $type := cond (eq $ext ".webm") "video/webm" "video/mp4" -}}
+<figure class="video{{ if $loop }} video-loop{{ end }}">
+  {{- if $loop }}
+  <video muted loop playsinline autoplay preload="auto" aria-label="{{ .Text }}" title="{{ .Text }}">
+  {{- else }}
+  <video controls playsinline preload="metadata" aria-label="{{ .Text }}">
+  {{- end }}
+    <source src="{{ $src }}" type="{{ $type }}">
+    <a href="{{ $src }}">{{ with .Text }}{{ . }}{{ else }}Video{{ end }}</a>
+  </video>
+  {{- with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- else -}}
+  {{- $src := .Destination | safeURL -}}
+  {{- with .Title -}}
 <figure>
   <img src="{{ $src }}" alt="{{ $.Text }}" loading="lazy" decoding="async">
   <figcaption>{{ . }}</figcaption>
 </figure>
-{{- else -}}
+  {{- else -}}
 <img src="{{ $src }}" alt="{{ .Text }}" loading="lazy" decoding="async">
+  {{- end -}}
 {{- end -}}

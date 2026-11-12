@@ -50,6 +50,8 @@ content:
       - name: body
         label: Text
         type: rich-text
+        options:
+            categories: [image, video]
 
   - name: posts_de
     label: "Beiträge (Deutsch)"

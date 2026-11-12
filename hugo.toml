@@ -113,6 +113,9 @@ enableRobotsTXT = true
 [markup.goldmark.renderer]
   unsafe = false
 
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false
+
 [markup.tableOfContents]
   startLevel = 2
   endLevel = 3
