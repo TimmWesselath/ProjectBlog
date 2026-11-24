@@ -4,7 +4,7 @@ translationKey: sodium-ferrioxalate
 date: 2026-11-24
 description: Synthesizing sodium tris(oxalato)ferrate(III), growing crystals
   from it and explaining where Fe(III) salts get their colors from
-draft: false
+draft: true
 featured: false
 ---
 # Synthesis of sodium tris(oxalato)ferrate(III)
