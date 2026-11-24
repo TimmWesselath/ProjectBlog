@@ -25,7 +25,7 @@ The synthesis of the complex salt was carried out by first converting Iron(III)c
 
 At first 25g of anhydrous Iron(III)-chloride were weighed out and dissolved in about 100 ml of distilled water. This has to be done carefully as the Iron(III)-chloride releases a lot of energy when hydrated. This alone brings the temperature of the solution to about 35 °C.
 
-> ![](/images/sodium_ferrioxalate/ironchloride_black_crop.jpg)
+> ![](/images/sodium_ferrioxalate/ironchloride_black_crop.jpg#medium)
 > Fig(1): anhydrous iron(III)-chloride: a dark brown to black hygroscopic solid
 
 The solution was then heated to around 80 °C while 18,5 g of sodium hydroxide were weighed out and dissolved in ca. 50 ml of water. This solution was then slowly added to the iron solution while stirring to break up the precipitate. The volumous precipitate was then left at 80 °C to digest. After about 20 minutes the heating was turned of and the slurry was diluted with distilled water to a total volume af about 1000 ml. After seteling out the clear solution above the solid was carefully decanted and the volume was once again brought up to 1000 ml. This was repeated several times to wash out any sodium chloride that had formed durring the reaction.
@@ -38,7 +38,7 @@ Seteling the solid took a lot longer than expected by me. The first seteling per
 
 Next 58.24 g of oxalic-acid dihydrate was added to the slury. this was left to react at around 80°C with strong stirring. after about 2 hours the solid was fully dissolved to a dark green/brown solution. this solution was then neutralised by adding 24,5 g of anhydrous sodium-carbonate. This has to be done slowly due to the large amount of CO2 gas the addition releases.
 
-> ![](/images/sodium_ferrioxalate/oxalicacid_black_crop.jpg)
+> ![](/images/sodium_ferrioxalate/oxalicacid_black_crop.jpg#medium)
 >  Fig(2): Oxalic-acid dihydrate
 
 Adding to much carbonate at once results in the formation of some clumpy brown percipitate that did not redissolve. this is likely ironhydroxide forming due to the localy high pH of the solution. using an equivilant amount of bicarbonate might stop this from happening as it raises the pH much less strongly. dissolving the carbonate in water and slowly adding this solution might also be a better way of doing this.
@@ -47,14 +47,14 @@ Adding to much carbonate at once results in the formation of some clumpy brown p
 
 After filtering off any undissolved solids we are left with a dark green solution of our final product.
 
-> ![](/images/sodium_ferrioxalate/sodiumferrioxalate_solution_black_crop.jpg)
+> ![](/images/sodium_ferrioxalate/sodiumferrioxalate_solution_black_crop.jpg#medium)
 >  Fig(3): A sample of sodium tris(oxalato)ferrate(III) solution
 
 the solution was still hot at this point so I transfered it into an evaporation dish to reduce the volume a bit. once the volume was reduced to about 100 ml - 150 ml the solution was left to cool down. uppon cooling some crystals formed on the bottom of the dish. one of these crystals was selected as a seed crystal for later growing a larger crystal from. the rest of the crystals were dryed as good as possible and kept. the saturated solution was kept for later growing the crystal from.
 
-> ![](/images/sodium_ferrioxalate/sodiumferrioxalate_black_crop.jpg)
+> ![](/images/sodium_ferrioxalate/sodiumferrioxalate_black_crop.jpg#medium)
 >  Fig(4): Some of the sodium tris(oxalato)ferrate(III) crystals
 
-> ![](/images/sodium_ferrioxalate/seedcrystal_black_crop.jpg)
+> ![](/images/sodium_ferrioxalate/seedcrystal_black_crop.jpg#medium)
 >  Fig(5): A crystal of sodium tris(oxalato)ferrate(III) for later use as a seed crystal
 
