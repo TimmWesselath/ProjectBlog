@@ -51,3 +51,9 @@ figcaption { text-align: center; font-size: 0.9em; opacity: var(--dim-opacity); 
    /* Videos in posts */
    figure.video video { display: block; width: 100%; height: auto; border-radius: 4px; background: #000; }
    figure.video-loop video { background: transparent; cursor: pointer; }
+
+main#main-content img.size-small, main#main-content figure.size-small { max-width: min(300px, 100%); }
+main#main-content img.size-medium, main#main-content figure.size-medium { max-width: min(500px, 100%); }
+main#main-content .size-small, main#main-content .size-medium { display: block; margin-left: auto; margin-right: auto; }
+main#main-content figure.size-small img, main#main-content figure.size-medium img,
+main#main-content figure.size-small video, main#main-content figure.size-medium video { width: 100%; max-width: 100%; }
