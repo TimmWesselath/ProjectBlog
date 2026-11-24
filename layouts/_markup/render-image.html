@@ -7,13 +7,14 @@
            A file named *.loop.mp4 / *.loop.webm also plays like a GIF.
 */ -}}
 {{- $u := urls.Parse .Destination -}}
+{{- $clean := index (split .Destination "#") 0 -}}
 {{- $ext := lower (path.Ext $u.Path) -}}
 {{- $isVideo := in (slice ".mp4" ".webm") $ext -}}
 {{- if $isVideo -}}
   {{- $loop := or (eq $u.Fragment "loop") (strings.HasSuffix (lower $u.Path) (printf ".loop%s" $ext)) -}}
-  {{- $src := $u.Path | safeURL -}}
+  {{- $src := $clean | safeURL -}}
   {{- $type := cond (eq $ext ".webm") "video/webm" "video/mp4" -}}
-<figure class="video{{ if $loop }} video-loop{{ end }}">
+<figure class="video{{ if $loop }} video-loop{{ end }}{{ if in (slice "small" "medium") $u.Fragment }} size-{{ $u.Fragment }}{{ end }}">
   {{- if $loop }}
   <video muted loop playsinline autoplay preload="auto" aria-label="{{ .Text }}" title="{{ .Text }}">
   {{- else }}
@@ -25,10 +26,11 @@
   {{- with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>
 {{- else -}}
-  {{- $src := .Destination | safeURL -}}
+  {{- $src := $clean | safeURL -}}
+  {{- $size := cond (in (slice "small" "medium") $u.Fragment) (printf "size-%s" $u.Fragment) "" -}}
   {{- with .Title -}}
-<figure>
-  <img src="{{ $src }}" alt="{{ $.Text }}" loading="lazy" decoding="async">
+<figure{{ with $size }} class="{{ . }}"{{ end }}>
+  <img src="{{ $src }}" alt="{{ .Text }}"{{ with $size }} class="{{ . }}"{{ end }} loading="lazy" decoding="async">
   <figcaption>{{ . }}</figcaption>
 </figure>
   {{- else -}}
